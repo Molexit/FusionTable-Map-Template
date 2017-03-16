@@ -165,8 +165,8 @@
         //-----custom filters-----
 var type_column = "'type'";
 var searchType = type_column + " IN (-1,";
-if ( $("Garden Center").is(':checked')) searchType += "1,";
-if ( $("Landscape Professional").is(':checked')) searchType += "2,";
+if ( $("#Garden Center").is(':checked')) searchType += "1,";
+if ( $("#Landscape Professional").is(':checked')) searchType += "2,";
 
 self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")"
 
