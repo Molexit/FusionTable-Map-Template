@@ -163,11 +163,10 @@
         self.whereClause = self.locationColumn + " not equal to ''";
         
         //-----custom filters-----
-var type_column = "'type'";
-var searchType = type_column + " IN (-1,";
-if ( $("#cbType1").is(':checked')) searchType += "1,";
-if ( $("#cbType2").is(':checked')) searchType += "2,";
-self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
+var type_column = "type";
+
+if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
+if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
