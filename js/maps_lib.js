@@ -163,10 +163,11 @@
         self.whereClause = self.locationColumn + " not equal to ''";
         
         //-----custom filters-----
-var type_column = "type";
-
-if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
-if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
+    var type_column = "'Business Type'";  // -- note use of single & double quotes for two-word column header
+    var tempWhereClause = [];
+    if ( $("#cbType1").is(':checked')) tempWhereClause.push("'Garden Center'");
+    if ( $("#cbType2").is(':checked')) tempWhereClause.push("'Landscape Professional'");
+       whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
