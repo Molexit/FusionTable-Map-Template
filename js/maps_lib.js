@@ -165,9 +165,9 @@
         //-----custom filters-----
         var type_column = "'type'";
 
-if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=1";
-if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=2";
-if ( $("#rbType3").is(':checked')) self.whereClause += " AND " + type_column + "=3";
+if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + "Garden Centers" + "=1";
+if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + "Lanscape Professionals" + "=2";
+
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
