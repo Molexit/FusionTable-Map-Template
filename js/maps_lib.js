@@ -164,11 +164,10 @@
         
         //-----custom filters-----
 var type_column = "'type'";
-var tempWhereClause = [];
-if ( $("#cbType1").is(':checked')) tempWhereClause.push("Garden Center");
-if ( $("#cbType2").is(':checked')) tempWhereClause.push("Landscape Professional");
-
-self.whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
+var searchType = type_column + " IN (-1,";
+if ( $("#cbType1").is(':checked')) searchType += "1,";
+if ( $("#cbType2").is(':checked')) searchType += "2,";
+self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
