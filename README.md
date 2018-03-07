@@ -1,6 +1,4 @@
-# Fusion Table Searchable Map Template
 
-[![Searchable Map Template screenshot](https://raw.github.com/derekeder/FusionTable-Map-Template/master/images/searchable-map-template-v1.2.jpg)](http://derekeder.github.io/FusionTable-Map-Template/)
 
 [See the working demo &raquo;](http://molexit.github.io/FusionTable-Map-Template/)
 
