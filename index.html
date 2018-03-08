@@ -48,33 +48,34 @@
               <label>
                 within
                 <select id='search_radius'>
-                  <option value='400'>25 miles</option>
-                  <option value='805'>50 miles</option>
-                  <option value='1610'>100 miles</option>
-                  <option value='3220'>500 miles</option>
+                  <option value='400'>2 blocks</option>
+                  <option value='805'>1/2 mile</option>
+                  <option value='1610'>1 mile</option>
+                  <option value='3220'>2 miles</option>
                 </select>
               </label>
             </p>
-                <h4>
-  Where to Find Molexit
-</h4>
-<ul class='inputs-list unstyled'>
-  <li>
-    <label class='checkbox inline'>
-      <input type='checkbox' id='cbType1' />
-      <span class='filter-box filter-blue'></span>
-      Garden Center
-    </label>
-  </li>
-  <li>
-    <label class='checkbox inline'>
-      <input type='checkbox' id='cbType2' />
-      <span class='filter-box filter-green'></span>
-      Landscape Professional
-    </label>
-  </li>
-  
-</ul>      
+
+            <br />
+            <h4>Custom filters and views</h4>
+            <p>Take a look at the <a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples'>wiki</a> to see how to add your own custom filters and views like:</p>
+            <div class='row'>
+              <div class='col-md-6'>
+                <ul>
+                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-checkboxes'>Checkboxes</a></li>
+                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-radiobuttons'>Radio buttons</a></li>
+                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-drop-down-lists'>Drop down lists</a></li>
+                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-textsearches'>Text searches</a></li>
+                </ul>
+              </div>
+              <div class='col-md-6'>
+                <ul>
+                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-sliders'>Sliders</a></li>
+                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-date-sliders'>Date sliders</a></li>
+                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/List-search-results'>Results lists</a></li>
+                </ul>
+              </div>
+            </div>
             <br />
             <a class='btn btn-primary' id='search' href='#'>
               <i class='glyphicon glyphicon-search'></i>
@@ -118,19 +119,17 @@
         
         $(function() {
           var myMap = new MapsLib({
-            fusionTableId:      "1q69ucLAOhx4J1cOfKt07nrhp8DlFhhisSMzuDfB9",
-            googleApiKey:       "AIzaSyC-PEM3InEYO6x6elOBynQ8uYQaCNH4iOA"
-            locationColumn:     "location"
-            map_center:         [38.252665, -85.758456],
-            locationScope:      "unitedstates"
+            fusionTableId:      "1m4Ez9xyTGfY2CU6O-UgEcPzlS0rnzLU93e4Faa0",
+            googleApiKey:       "AIzaSyA3FQFrNr5W2OEVmuENqhb2MBB2JabdaOY",
+            locationColumn:     "geometry",
+            map_center:         [41.8781136, -87.66677856445312],
+            locationScope:      "chicago"
           });
-
           var autocomplete = new google.maps.places.Autocomplete(document.getElementById('search_address'));
       
           $(':checkbox').click(function(){
             myMap.doSearch();
           });
-
           $(':radio').click(function(){
             myMap.doSearch();
           });
