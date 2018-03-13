@@ -23,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class='navbar-brand' href='index.html'>Searchable Map Template</a>
+          <a class='navbar-brand' href='index.html'></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -42,7 +42,7 @@
               Address <small>(<a id='find_me' href='#'>find me</a>)</small>
             </h4>
             <p>
-              <input class='form-control' id='search_address' placeholder='Enter an address or an intersection' type='text' />
+              <input class='form-control' id='search_address' placeholder='Enter a state, city, or address' type='text' />
             </p>
             <p>
               <label>
@@ -129,27 +129,33 @@
       
           $(':checkbox').click(function(){
             myMap.doSearch();
+            google.maps.event.trigger(self.map, 'resize');
           });
           $(':radio').click(function(){
             myMap.doSearch();
+            google.maps.event.trigger(self.map, 'resize');
           });
           
           $('#search_radius').change(function(){
             myMap.doSearch();
+            google.maps.event.trigger(self.map, 'resize');
           });
           
           $('#search').click(function(){
             myMap.doSearch();
+            google.maps.event.trigger(self.map, 'resize');
           });
           
           $('#find_me').click(function(){
             myMap.findMe(); 
             return false;
+            google.maps.event.trigger(self.map, 'resize');
           });
           
           $('#reset').click(function(){
             myMap.reset(); 
             return false;
+            google.maps.event.trigger(self.map, 'resize');
           });
           
           $(":text").keydown(function(e){
@@ -157,6 +163,7 @@
               if(key === 13) {
                   $('#search').click();
                   return false;
+                google.maps.event.trigger(self.map, 'resize');
               }
           });
         });
