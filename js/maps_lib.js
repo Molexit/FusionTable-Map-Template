@@ -91,7 +91,6 @@
         //run the default search when page loads
         self.doSearch();
         if (options.callback) options.callback(self);
-        google.maps.event.trigger(self.map, 'resize');
     };
 
     //-----custom functions-----
